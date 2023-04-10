@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/appointment.dart';
+import 'package:medical_app/ui/appointment/appointment_screen.dart';
 
 class Chat extends StatefulWidget {
   const Chat({super.key});
@@ -28,7 +28,7 @@ class _ChatState extends State<Chat> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const Appointment()),
+                              builder: (context) => const AppointmentScreen()),
                         );
                       },
                       child: Container(
