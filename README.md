@@ -1,5 +1,4 @@
 # medical_app
-
 UI for a Flutter mobile app that helps patients to book appointments with doctors.
 
 Design inspo: https://www.behance.net/gallery/133825339/Medical-Mobile-App-concept
