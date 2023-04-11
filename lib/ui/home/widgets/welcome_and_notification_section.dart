@@ -31,26 +31,15 @@ class WelcomeAndNotificationSection extends StatelessWidget {
             ),
           ],
         ),
-        InkWell(
-          onTap: () {
-            //! Do not compose widgets inside the callback method
-            // Container(
-            //     padding: const EdgeInsets.all(10),
-            //     decoration: BoxDecoration(
-            //         border: Border.all(color: Colors.grey),
-            //         borderRadius: BorderRadius.circular(10)),
-            //     child: const Icon(Icons.notifications));
-          },
-          child: Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(10)),
-            child: Image.asset(
-              'assets/images/bell.png',
-              height: 20,
-              width: 20,
-            ),
+        Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(10)),
+          child: Image.asset(
+            'assets/images/bell.png',
+            height: 20,
+            width: 20,
           ),
         ),
       ],

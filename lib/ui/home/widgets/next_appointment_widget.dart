@@ -15,7 +15,7 @@ class NextAppointmentWidget extends StatelessWidget {
           children: const [
             Text('Next Appointment',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 22,
                   color: Color(0xFF2e3253),
                   fontWeight: FontWeight.w500,
                 )),
@@ -26,9 +26,9 @@ class NextAppointmentWidget extends StatelessWidget {
                 ))
           ],
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 25),
         SizedBox(
-          height: 139,
+          height: 149,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: <Widget>[
@@ -42,7 +42,7 @@ class NextAppointmentWidget extends StatelessWidget {
                 },
                 child: Container(
                   //first one
-                  padding: const EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(25),
                   decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),
                       borderRadius: BorderRadius.circular(20)),
@@ -151,7 +151,7 @@ class NextAppointmentWidget extends StatelessWidget {
                 },
                 child: Container(
                   //second
-                  padding: const EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),
                       borderRadius: BorderRadius.circular(20)),

@@ -8,31 +8,6 @@ class SearchFieldSection extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        //! Use TextField instead of Container for input
-        //! Wrap the Textfield in an Expanded if you are going to
-        //! use it in a Row with other widgets
-        // SizedBox(
-
-        // Container(
-        //   decoration: BoxDecoration(
-        //       border: Border.all(color: Colors.grey),
-        //       borderRadius: BorderRadius.circular(10)),
-        //   child: Padding(
-        //     padding: const EdgeInsets.only(
-        //         top: 10, bottom: 10, left: 20, right: 20),
-        //     child: Row(
-        //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //       children: const [
-        //         Text(
-        //           'Search',
-        //           style: TextStyle(color: Colors.grey),
-        //         ),
-        //         Icon(Icons.search,)
-        //       ],
-        //     ),
-        //   ),
-        // ),
-        // ),
         Expanded(
           child: SizedBox(
             height: 50,

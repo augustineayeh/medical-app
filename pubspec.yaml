@@ -32,6 +32,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  rolling_bottom_bar: 
+
+
 
   persistent_bottom_nav_bar: any
  

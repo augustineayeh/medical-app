@@ -42,7 +42,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                   ),
                 ),
                 const Text(
-                  'AppointmentScreen',
+                  'Appointment',
                   style: TextStyle(
                     fontSize: 25,
                     color: Color(0xFF2e3253),
@@ -417,21 +417,53 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
             const SizedBox(
               height: 30,
             ),
-            Container(
-              height: 150,
-              padding: const EdgeInsets.only(
-                  top: 20, bottom: 10, left: 20, right: 20),
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(20)),
-              child: const Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Write your complaint here...',
-                  style: TextStyle(color: Colors.grey, fontSize: 16),
+
+            TextField(
+              maxLines: 7,
+              decoration: InputDecoration(
+                contentPadding:
+                    const EdgeInsets.only(top: 10, bottom: 15, left: 20),
+                hintText: 'Write your complaint here...',
+                hintStyle: const TextStyle(color: Colors.grey),
+                suffixIconConstraints:
+                    const BoxConstraints(maxWidth: 150, maxHeight: 40),
+                fillColor: const Color(0xFFACADAD),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(
+                    color: Color(0xFFACADAD),
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(
+                    color: Color(0xFFACADAD),
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(
+                    color: Color(0xFFACADAD),
+                  ),
                 ),
               ),
             ),
+
+            // Container(
+            //   height: 150,
+            //   padding: const EdgeInsets.only(
+            //       top: 20, bottom: 10, left: 20, right: 20),
+            //   decoration: BoxDecoration(
+            //       border: Border.all(color: Colors.grey),
+            //       borderRadius: BorderRadius.circular(20)),
+            //   child: const Align(
+            //     alignment: Alignment.topLeft,
+            //     child: Text(
+            //       'Write your complaint here...',
+            //       style: TextStyle(color: Colors.grey, fontSize: 16),
+            //     ),
+            //   ),
+            // ),
             const SizedBox(
               height: 30,
             ),
