@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/chat.dart';
-import 'package:medical_app/home_page.dart';
+import 'package:medical_app/ui/home/home_page.dart';
 
-class Appointment extends StatefulWidget {
-  const Appointment({super.key});
+class AppointmentScreen extends StatefulWidget {
+  const AppointmentScreen({super.key});
 
   @override
-  State<Appointment> createState() => _AppointmentState();
+  State<AppointmentScreen> createState() => _AppointmentScreenState();
 }
 
-class _AppointmentState extends State<Appointment> {
+class _AppointmentScreenState extends State<AppointmentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +42,7 @@ class _AppointmentState extends State<Appointment> {
                   ),
                 ),
                 const Text(
-                  'Appointment',
+                  'AppointmentScreen',
                   style: TextStyle(
                     fontSize: 25,
                     color: Color(0xFF2e3253),
@@ -452,7 +452,7 @@ class _AppointmentState extends State<Appointment> {
                   child: const Align(
                     alignment: Alignment.center,
                     child: Text(
-                      'Make an appointment',
+                      'Make an AppointmentScreen',
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   )),
