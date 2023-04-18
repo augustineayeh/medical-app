@@ -1,4 +1,5 @@
-import 'appointment.dart';
+import 'package:flutter/material.dart';
+import 'package:medical_app/ui/appointment/widgets/widgets.dart';
 
 class AppointmentScreen extends StatefulWidget {
   const AppointmentScreen({super.key});
