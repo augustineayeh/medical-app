@@ -1,4 +1,4 @@
-import 'package:medical_app/ui/ui.dart';
+import 'package:flutter/material.dart';
 
 class DoctorInfo extends StatelessWidget {
   const DoctorInfo({super.key});
