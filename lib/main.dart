@@ -1,5 +1,4 @@
 import 'ui/ui.dart';
-
 void main() {
   runApp(const MyApp());
 }
