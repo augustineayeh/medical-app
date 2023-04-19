@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/ui/appointment/appointment_screen.dart';
+import 'package:medical_app/screens/appointment/appointment_screen.dart';
 
 class Chat extends StatefulWidget {
   const Chat({super.key});
@@ -102,7 +102,7 @@ class _ChatState extends State<Chat> {
                           topRight: Radius.circular(50),
                         ),
                       ),
-                      height: size.height * 0.8,
+                      height: size.height * 0.73,
                       width: size.width,
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -149,7 +149,7 @@ class _ChatState extends State<Chat> {
                               ],
                             ),
                             const SizedBox(
-                              height: 35,
+                              height: 40,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -173,7 +173,7 @@ class _ChatState extends State<Chat> {
                               ],
                             ),
                             const SizedBox(
-                              height: 35,
+                              height: 40,
                             ),
                             Container(
                               padding: const EdgeInsets.all(15),
@@ -189,7 +189,7 @@ class _ChatState extends State<Chat> {
                               ),
                             ),
                             const SizedBox(
-                              height: 100,
+                              height: 110,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -210,11 +210,6 @@ class _ChatState extends State<Chat> {
                                         width: 20,
                                         color: Colors.white,
                                       ),
-                                      // Image.asset(
-                                      //   'assets/images/sound-waves.png',
-                                      //   height: 30,
-                                      //   width: 30,
-                                      // ),
                                       Image.asset(
                                         'assets/images/sound-waves.png',
                                         height: 30,
@@ -227,7 +222,7 @@ class _ChatState extends State<Chat> {
                               ],
                             ),
                             const SizedBox(
-                              height: 60,
+                              height: 45,
                             ),
                             RichText(
                               text: const TextSpan(
@@ -255,7 +250,7 @@ class _ChatState extends State<Chat> {
                       ),
                     ),
                     Positioned(
-                      top: 340,
+                      top: 350,
                       left: 20,
                       right: 20,
                       child: Row(

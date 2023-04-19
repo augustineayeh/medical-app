@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/ui/home/home.dart';
+import 'package:medical_app/screens/home/home.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({super.key});
