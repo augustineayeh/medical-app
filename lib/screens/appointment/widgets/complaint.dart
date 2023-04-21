@@ -58,7 +58,7 @@ class Complaint extends StatelessWidget {
               child: const Align(
                 alignment: Alignment.center,
                 child: Text(
-                  'Make an AppointmentScreen',
+                  'Make an Appointment',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               )),
