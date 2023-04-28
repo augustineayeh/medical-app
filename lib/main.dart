@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Medical App',
       theme: ThemeData(
-        fontFamily: 'Monserat',
+        fontFamily: 'Monserrat',
       ),
       home: const MyHomePage(),
       debugShowCheckedModeBanner: false,
