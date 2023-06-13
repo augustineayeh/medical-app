@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/screens/appointment/widgets/widgets.dart';
+import 'package:medical_app/src/screens/appointment/widgets/widgets.dart';
 
 class AppointmentScreen extends StatefulWidget {
   const AppointmentScreen({super.key});
@@ -11,12 +11,12 @@ class AppointmentScreen extends StatefulWidget {
 class _AppointmentScreenState extends State<AppointmentScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15),
-          child: Column(children: const [
+          padding: EdgeInsets.all(15),
+          child: Column(children: [
             TopBar(),
             SizedBox(height: 35),
             DoctorInfo(),

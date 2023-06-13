@@ -65,32 +65,36 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 15, right: 15),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: const [
-                WelcomeAndNotificationSection(),
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: 15,
-                    bottom: 23,
-                  ),
-                  child: TopStackWidget(),
+      body: const SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  children: [
+                    WelcomeAndNotificationSection(),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: 15,
+                        bottom: 23,
+                      ),
+                      child: TopStackWidget(),
+                    ),
+                    SizedBox(height: 15),
+                    SearchFieldSection(),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    OurServicesWidget(),
+                    SizedBox(
+                      height: 25,
+                    ),
+                  ],
                 ),
-                SizedBox(height: 15),
-                SearchFieldSection(),
-                SizedBox(
-                  height: 25,
-                ),
-                OurServicesWidget(),
-                SizedBox(
-                  height: 25,
-                ),
-                NextAppointmentWidget(),
-              ],
-            ),
+              ),
+              NextAppointmentWidget(),
+            ],
           ),
         ),
       ),

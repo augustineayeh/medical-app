@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/screens/chat/chat.dart';
+import 'package:medical_app/src/screens/chat/chat.dart';
 
 class Complaint extends StatelessWidget {
   const Complaint({super.key});

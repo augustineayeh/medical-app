@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/screens/appointment/appointment_screen.dart';
+import 'package:medical_app/src/screens/appointment/appointment_screen.dart';
 
 class Chat extends StatefulWidget {
   const Chat({super.key});
@@ -223,24 +223,6 @@ class _ChatState extends State<Chat> {
                             ),
                             const SizedBox(
                               height: 45,
-                            ),
-                            RichText(
-                              text: const TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: 'Dr. Zamkin',
-                                    style: TextStyle(
-                                        color: Color(0xFF2e3253),
-                                        fontWeight: FontWeight.w700),
-                                  ),
-                                  TextSpan(
-                                    text: ' is typing ...',
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w500),
-                                  )
-                                ],
-                              ),
                             ),
                             const SizedBox(
                               height: 45,
