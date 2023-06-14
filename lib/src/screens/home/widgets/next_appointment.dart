@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/src/models/doctor.dart';
 import 'package:medical_app/src/screens/home/widgets/doctor.dart';
+import 'package:medical_app/src/utils/app_colors.dart';
+import 'package:medical_app/src/utils/text_styles.dart';
 
-class NextAppointmentWidget extends StatelessWidget {
-  const NextAppointmentWidget({super.key});
+class NextAppointment extends StatelessWidget {
+  const NextAppointment({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +17,11 @@ class NextAppointmentWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Next Appointment',
-                  style: TextStyle(
-                    fontSize: 22,
-                    color: Color(0xFF2e3253),
-                    fontWeight: FontWeight.w500,
-                  )),
+              Text('Next Appointment', style: TextStyles.title),
               Text('View All',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Color(0xFFe6964c),
+                    color: AppColors.orange,
                   ))
             ],
           ),
@@ -34,12 +31,10 @@ class NextAppointmentWidget extends StatelessWidget {
           padding: const EdgeInsets.only(left: 15),
           child: SizedBox(
               height: 149,
-              child: ListView.separated(
+              child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 physics: const ScrollPhysics(),
                 shrinkWrap: true,
-                separatorBuilder: (BuildContext context, int index) =>
-                    const SizedBox(width: 20),
                 itemCount: doctors.length,
                 itemBuilder: (context, index) {
                   final doctor = doctors[index];

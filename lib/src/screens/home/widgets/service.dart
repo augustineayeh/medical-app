@@ -4,7 +4,7 @@ import 'package:medical_app/src/models/services.dart';
 import 'package:medical_app/src/utils/app_colors.dart';
 
 class ServiceWidget extends StatelessWidget {
-  final ServiceModel service;
+  final Service service;
   final int index;
 
   const ServiceWidget({

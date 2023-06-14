@@ -1,7 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:medical_app/src/models/doctor.dart';
-import 'package:medical_app/src/screens/appointment/appointment.dart';
+import 'package:medical_app/src/screens/appointment/appointment_screen.dart';
+import 'package:medical_app/src/utils/app_colors.dart';
 
 class DoctorWidget extends StatelessWidget {
   final Doctor doctor;
@@ -23,6 +23,7 @@ class DoctorWidget extends StatelessWidget {
         );
       },
       child: Container(
+        margin: const EdgeInsets.only(right: 20),
         padding: const EdgeInsets.all(25),
         decoration: BoxDecoration(
             border: Border.all(color: Colors.grey),
@@ -44,7 +45,7 @@ class DoctorWidget extends StatelessWidget {
                   Text(
                     doctor.doctorName,
                     style: const TextStyle(
-                        color: Color(0xFF2e3253),
+                        color: AppColors.purple,
                         fontSize: 18,
                         fontWeight: FontWeight.w600),
                   ),
@@ -62,8 +63,8 @@ class DoctorWidget extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.only(
-                    top: 5, bottom: 5, left: 15, right: 15),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: const Color(0xFFe5e5e6)),
@@ -80,7 +81,7 @@ class DoctorWidget extends StatelessWidget {
                     Text(
                       doctor.date,
                       style: const TextStyle(
-                        color: Color(0xFF2e3253),
+                        color: AppColors.purple,
                       ),
                     )
                   ],
@@ -108,7 +109,7 @@ class DoctorWidget extends StatelessWidget {
                     Text(
                       doctor.time,
                       style: const TextStyle(
-                        color: Color(0xFF2e3253),
+                        color: AppColors.purple,
                       ),
                     )
                   ],

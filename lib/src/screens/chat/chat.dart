@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/src/screens/appointment/appointment_screen.dart';
+import 'package:medical_app/src/utils/app_colors.dart';
 
 class Chat extends StatefulWidget {
   const Chat({super.key});
@@ -31,12 +31,7 @@ class _ChatState extends State<Chat> {
                       children: [
                         InkWell(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const AppointmentScreen()),
-                            );
+                            Navigator.pop(context);
                           },
                           child: Container(
                               padding: const EdgeInsets.all(10),
@@ -141,7 +136,7 @@ class _ChatState extends State<Chat> {
                                   child: const Text(
                                     'Hi, Monika! How can i help you?',
                                     style: TextStyle(
-                                        color: Color(0xFF2e3253),
+                                        color: AppColors.purple,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 16),
                                   ),
@@ -183,7 +178,7 @@ class _ChatState extends State<Chat> {
                               child: const Text(
                                 'Oh, sure! 14:00 will be okay?',
                                 style: TextStyle(
-                                    color: Color(0xFF2e3253),
+                                    color: AppColors.purple,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 16),
                               ),
@@ -341,7 +336,7 @@ class _ChatState extends State<Chat> {
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
-                                color: const Color(0xFFe6964c),
+                                color: AppColors.orange,
                                 borderRadius: BorderRadius.circular(10)),
                             child: const Icon(
                               Icons.send,

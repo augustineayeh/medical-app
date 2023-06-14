@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/src/models/services.dart';
-import 'package:medical_app/src/screens/home/widgets/service_widget.dart';
+import 'package:medical_app/src/screens/home/widgets/service.dart';
+import 'package:medical_app/src/utils/app_colors.dart';
 
-class OurServicesWidget extends StatelessWidget {
-  const OurServicesWidget({super.key});
+class Services extends StatelessWidget {
+  const Services({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +15,13 @@ class OurServicesWidget extends StatelessWidget {
           children: [
             Text('Our Services',
                 style: TextStyle(
-                  fontSize: 20,
-                  color: Color(0xFF2e3253),
+                  fontSize: 24,
+                  color: AppColors.purple,
                 )),
             Text('See More',
                 style: TextStyle(
                   fontSize: 16,
-                  color: Color(0xFFe6964c),
+                  color: AppColors.orange,
                 ))
           ],
         ),
@@ -37,7 +38,7 @@ class OurServicesWidget extends StatelessWidget {
                 const SizedBox(width: 50),
             itemCount: services.length,
             itemBuilder: (context, index) {
-              ServiceModel service = services[index];
+              Service service = services[index];
               return ServiceWidget(service: service, index: index);
             },
           ),

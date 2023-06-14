@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medical_app/src/utils/app_constants.dart';
 
 import 'widgets/widgets.dart';
 
@@ -66,14 +67,15 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: const SafeArea(
+        bottom: false,
         child: SingleChildScrollView(
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: AppConstants.regularPadding,
                 child: Column(
                   children: [
-                    WelcomeAndNotificationSection(),
+                    WelcomeSection(),
                     Padding(
                       padding: EdgeInsets.only(
                         top: 15,
@@ -82,18 +84,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: TopStackWidget(),
                     ),
                     SizedBox(height: 15),
-                    SearchFieldSection(),
+                    SearchField(),
                     SizedBox(
                       height: 25,
                     ),
-                    OurServicesWidget(),
+                    Services(),
                     SizedBox(
                       height: 25,
                     ),
                   ],
                 ),
               ),
-              NextAppointmentWidget(),
+              NextAppointment(),
             ],
           ),
         ),

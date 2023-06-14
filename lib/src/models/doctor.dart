@@ -4,14 +4,27 @@ class Doctor {
   final String time;
   final String date;
 
-  Doctor(this.doctorName, this.aviUrl, this.time, this.date);
+  Doctor(
+      {required this.doctorName,
+      required this.aviUrl,
+      required this.time,
+      required this.date});
 }
 
 final List<Doctor> doctors = [
-  Doctor('Dr. Helena Holk', 'assets/images/nursepic.jpg', '09:00-10:00',
-      '10 Dec 2021'),
-  Doctor('Dr. Hakeem Khalifa', 'assets/images/doc3.jpeg', '10:00-11:00',
-      '17 Dec 2021'),
-  Doctor('Dr. Ryan Arthur', 'assets/images/newdoc.webp', '14:30-15:30',
-      '24 Dec 2021')
+  Doctor(
+      doctorName: 'Dr. Helena Holk',
+      aviUrl: 'assets/images/nursepic.jpg',
+      time: '09:00-10:00',
+      date: '10 Dec 2021'),
+  Doctor(
+      doctorName: 'Dr. Hakeem Khalifa',
+      aviUrl: 'assets/images/doc3.jpeg',
+      time: '10:00-11:00',
+      date: '17 Dec 2021'),
+  Doctor(
+      doctorName: 'Dr. Ryan Arthur',
+      aviUrl: 'assets/images/newdoc.webp',
+      time: '14:30-15:30',
+      date: '24 Dec 2021')
 ];

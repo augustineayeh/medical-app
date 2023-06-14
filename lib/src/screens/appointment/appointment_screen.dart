@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:medical_app/src/screens/appointment/widgets/scheduletime.dart';
 import 'package:medical_app/src/screens/appointment/widgets/widgets.dart';
+import 'package:medical_app/src/utils/app_constants.dart';
 
 class AppointmentScreen extends StatefulWidget {
   const AppointmentScreen({super.key});
@@ -13,22 +15,30 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
+          bottom: false,
           child: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(15),
-          child: Column(children: [
-            TopBar(),
-            SizedBox(height: 35),
-            DoctorInfo(),
-            SizedBox(height: 30),
-            Schedules(),
-            SizedBox(
-              height: 30,
+            child: Column(
+              children: [
+                Padding(
+                  padding: AppConstants.regularPadding,
+                  child: Column(children: [
+                    TopBar(),
+                    DoctorInfo(),
+                  ]),
+                ),
+                ScheduleDay(),
+                Padding(
+                  padding: AppConstants.regularPadding,
+                  child: Column(
+                    children: [
+                      ScheduleTime(),
+                      Complaint(),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            Complaint(),
-          ]),
-        ),
-      )),
+          )),
     );
   }
 }

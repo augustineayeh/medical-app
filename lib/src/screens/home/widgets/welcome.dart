@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:medical_app/src/screens/appointment/widgets/notif_button.dart';
+import 'package:medical_app/src/utils/app_colors.dart';
 
-class WelcomeAndNotificationSection extends StatelessWidget {
-  const WelcomeAndNotificationSection({super.key});
+class WelcomeSection extends StatelessWidget {
+  const WelcomeSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text(
               'Hi, Monika!',
               style: TextStyle(
-                  color: Color(0xFF2e3253),
+                  color: AppColors.purple,
                   fontWeight: FontWeight.w600,
                   fontSize: 30),
             ),
@@ -31,17 +33,7 @@ class WelcomeAndNotificationSection extends StatelessWidget {
             ),
           ],
         ),
-        Container(
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(10)),
-          child: Image.asset(
-            'assets/images/bell.png',
-            height: 20,
-            width: 20,
-          ),
-        ),
+        NotificationsButton(),
       ],
     );
   }

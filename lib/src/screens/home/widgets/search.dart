@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SearchFieldSection extends StatelessWidget {
-  const SearchFieldSection({super.key});
+class SearchField extends StatelessWidget {
+  const SearchField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,20 +26,10 @@ class SearchFieldSection extends StatelessWidget {
                 hintStyle: const TextStyle(color: Colors.grey),
                 suffixIconConstraints:
                     const BoxConstraints(maxWidth: 150, maxHeight: 40),
-                fillColor: const Color(0xFFACADAD),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(
-                    color: Color(0xFFACADAD),
-                  ),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(
-                    color: Color(0xFFACADAD),
-                  ),
-                ),
-                enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: const BorderSide(
                     color: Color(0xFFACADAD),

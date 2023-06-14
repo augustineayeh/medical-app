@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/src/screens/chat/chat.dart';
+import 'package:medical_app/src/utils/app_colors.dart';
 
 class Complaint extends StatelessWidget {
   const Complaint({super.key});
@@ -9,26 +10,13 @@ class Complaint extends StatelessWidget {
     return Column(
       children: [
         TextField(
-          maxLines: 7,
+          maxLines: 6,
           decoration: InputDecoration(
-            contentPadding:
-                const EdgeInsets.only(top: 10, bottom: 15, left: 20),
             hintText: 'Write your complaint here...',
             hintStyle: const TextStyle(color: Colors.grey),
-            suffixIconConstraints:
-                const BoxConstraints(maxWidth: 150, maxHeight: 40),
-            fillColor: const Color(0xFFACADAD),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(
-                color: Color(0xFFACADAD),
-              ),
-            ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(
-                color: Color(0xFFACADAD),
-              ),
+              borderSide: const BorderSide(color: Color(0xff015ee2)),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
@@ -39,7 +27,7 @@ class Complaint extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 30,
+          height: 20,
         ),
         InkWell(
           onTap: (() {
@@ -50,10 +38,9 @@ class Complaint extends StatelessWidget {
           }),
           child: Container(
               width: 400,
-              padding: const EdgeInsets.only(
-                  top: 15, bottom: 15, left: 20, right: 20),
+              padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
-                  color: const Color(0xFFe6964c),
+                  color: AppColors.orange,
                   borderRadius: BorderRadius.circular(15)),
               child: const Align(
                 alignment: Alignment.center,

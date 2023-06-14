@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medical_app/src/utils/app_colors.dart';
 
 class TopStackWidget extends StatelessWidget {
   const TopStackWidget({super.key});
@@ -32,11 +33,11 @@ class TopStackWidget extends StatelessWidget {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                              color: const Color(0xFFe6964c),
+                              color: AppColors.orange,
                               borderRadius: BorderRadius.circular(50)),
                           child: const Padding(
-                            padding: EdgeInsets.only(
-                                top: 5, left: 15, right: 15, bottom: 5),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 15, vertical: 5),
                             child: Text(
                               'Join now',
                               style:
