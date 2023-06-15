@@ -1,12 +1,17 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:medical_app/src/models/date.dart';
-import 'package:medical_app/src/utils/app_colors.dart';
+import 'package:medical_app/src/models/models.dart';
+import 'package:medical_app/src/utils/utils.dart';
 
 class DateWidget extends StatefulWidget {
-  final DateModel date;
+  final Date date;
   final int index;
 
-  const DateWidget({super.key, required this.date, required this.index});
+  const DateWidget({
+    Key? key,
+    required this.date,
+    required this.index,
+  }) : super(key: key);
 
   @override
   State<DateWidget> createState() => _DateWidgetState();
@@ -20,21 +25,23 @@ class _DateWidgetState extends State<DateWidget> {
       padding: const EdgeInsets.only(top: 20),
       margin: const EdgeInsets.only(right: 10),
       decoration: BoxDecoration(
+          color: widget.date.containerColor ?? Colors.white,
           border: Border.all(color: Colors.grey, width: 1),
           borderRadius: BorderRadius.circular(20)),
       child: Column(
         children: [
           Text(
             widget.date.dayName,
-            style: const TextStyle(
-                color: AppColors.purple,
-                fontWeight: FontWeight.w500,
-                fontSize: 22),
+            style: TextStyle(
+              color: widget.date.textColor ?? AppColors.purple,
+              fontWeight: FontWeight.w500,
+              fontSize: 22,
+            ),
           ),
           Text(
             widget.date.numeral.toString(),
-            style: const TextStyle(
-                color: AppColors.purple,
+            style: TextStyle(
+                color: widget.date.textColor ?? AppColors.purple,
                 fontWeight: FontWeight.w500,
                 fontSize: 22),
           )

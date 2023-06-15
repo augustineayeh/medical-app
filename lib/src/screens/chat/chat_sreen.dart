@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/src/utils/app_colors.dart';
+import 'package:medical_app/src/models/models.dart';
+import 'package:medical_app/src/screens/chat/incoming_text.dart';
+import 'package:medical_app/src/screens/chat/outgoing_text.dart';
+import 'package:medical_app/src/screens/chat/top_nav_bar.dart';
+import 'package:medical_app/src/utils/utils.dart';
 
-class Chat extends StatefulWidget {
-  const Chat({super.key});
+class ChatScreen extends StatefulWidget {
+  final Doctor doctor;
+  final int index;
+
+  const ChatScreen({
+    Key? key,
+    required this.doctor,
+    required this.index,
+  }) : super(key: key);
 
   @override
-  State<Chat> createState() => _ChatState();
+  State<ChatScreen> createState() => _ChatState();
 }
 
-class _ChatState extends State<Chat> {
+class _ChatState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -20,71 +31,7 @@ class _ChatState extends State<Chat> {
           bottom: false,
           child: Stack(
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF525672),
-                                  borderRadius: BorderRadius.circular(10)),
-                              child: const Icon(
-                                Icons.arrow_back,
-                                color: Colors.white,
-                              )),
-                        ),
-                        const Text(
-                          'Dr. Zamkin',
-                          style: TextStyle(
-                            fontSize: 27,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Container(
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                                color: const Color(0xFF525672),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: const Icon(
-                              Icons.phone,
-                              color: Colors.white,
-                            )),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50)),
-                          child: Image.asset(
-                            'assets/images/green-circle-emoji.png',
-                            height: 15,
-                            width: 15,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 2,
-                        ),
-                        const Text('Online',
-                            style:
-                                TextStyle(fontSize: 18, color: Colors.white)),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+              TopNavBar(doctor: widget.doctor, index: widget.index),
               Positioned(
                 bottom: 0.0,
                 child: Stack(
@@ -126,63 +73,12 @@ class _ChatState extends State<Chat> {
                             const SizedBox(
                               height: 2,
                             ),
-                            Row(
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.all(15),
-                                  decoration: BoxDecoration(
-                                      color: const Color(0xFFe8e8e8),
-                                      borderRadius: BorderRadius.circular(20)),
-                                  child: const Text(
-                                    'Hi, Monika! How can i help you?',
-                                    style: TextStyle(
-                                        color: AppColors.purple,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 16),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 40,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const SizedBox(
-                                  width: 20,
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.all(15),
-                                  decoration: BoxDecoration(
-                                      color: const Color(0xFF2e3253),
-                                      borderRadius: BorderRadius.circular(20)),
-                                  child: const Text(
-                                    'Hi, Doc! Can we meet tomorrow?',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 16),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 40,
-                            ),
-                            Container(
-                              padding: const EdgeInsets.all(15),
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFFe8e8e8),
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: const Text(
-                                'Oh, sure! 14:00 will be okay?',
-                                style: TextStyle(
-                                    color: AppColors.purple,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 16),
-                              ),
-                            ),
+                            const IncomingText(
+                                text: 'Hi, Monika! How can I help you?'),
+                            const OutgoingText(
+                                text: 'Hi, Doc! Can we meet tomorrow?'),
+                            const IncomingText(
+                                text: 'Oh, sure! 14:00 will be okay?'),
                             const SizedBox(
                               height: 110,
                             ),
@@ -291,7 +187,6 @@ class _ChatState extends State<Chat> {
                                     child: Image.asset(
                                       'assets/images/microphone.png',
                                       height: 25,
-                                      width: 25,
                                     ),
                                   ),
                                   contentPadding: const EdgeInsets.symmetric(
@@ -305,8 +200,6 @@ class _ChatState extends State<Chat> {
                                     maxWidth: 150,
                                     maxHeight: 40,
                                   ),
-                                  fillColor: Colors.grey,
-                                  focusColor: Colors.grey,
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: const BorderSide(
@@ -314,12 +207,6 @@ class _ChatState extends State<Chat> {
                                     ),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    borderSide: const BorderSide(
-                                      color: Color(0xFFACADAD),
-                                    ),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: const BorderSide(
                                       color: Color(0xFFACADAD),

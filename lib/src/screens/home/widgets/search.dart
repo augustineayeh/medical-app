@@ -24,8 +24,6 @@ class SearchField extends StatelessWidget {
                 contentPadding: const EdgeInsets.only(left: 20),
                 hintText: 'Search',
                 hintStyle: const TextStyle(color: Colors.grey),
-                suffixIconConstraints:
-                    const BoxConstraints(maxWidth: 150, maxHeight: 40),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -43,13 +41,11 @@ class SearchField extends StatelessWidget {
           width: 10,
         ),
         Container(
+            padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey),
                 borderRadius: BorderRadius.circular(10)),
-            child: const Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Icon(Icons.menu),
-            ))
+            child: const Icon(Icons.menu))
       ],
     );
   }

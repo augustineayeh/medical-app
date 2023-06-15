@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/src/models/date.dart';
+import 'package:medical_app/src/models/models.dart';
 import 'package:medical_app/src/screens/appointment/widgets/date.dart';
-import 'package:medical_app/src/utils/text_styles.dart';
+import 'package:medical_app/src/utils/utils.dart';
 
 class ScheduleDay extends StatelessWidget {
   const ScheduleDay({super.key});
@@ -27,7 +27,7 @@ class ScheduleDay extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: dates.length,
             itemBuilder: (context, index) {
-              final DateModel date = dates[index];
+              final Date date = dates[index];
               return DateWidget(date: date, index: index);
             },
           ),

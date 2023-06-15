@@ -1,10 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:medical_app/src/screens/appointment/widgets/scheduletime.dart';
+import 'package:medical_app/src/models/models.dart';
 import 'package:medical_app/src/screens/appointment/widgets/widgets.dart';
-import 'package:medical_app/src/utils/app_constants.dart';
+import 'package:medical_app/src/utils/utils.dart';
 
 class AppointmentScreen extends StatefulWidget {
-  const AppointmentScreen({super.key});
+  final Doctor doctor;
+  final int index;
+
+  const AppointmentScreen({
+    Key? key,
+    required this.doctor,
+    required this.index,
+  }) : super(key: key);
 
   @override
   State<AppointmentScreen> createState() => _AppointmentScreenState();
@@ -13,7 +21,7 @@ class AppointmentScreen extends StatefulWidget {
 class _AppointmentScreenState extends State<AppointmentScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
           bottom: false,
           child: SingleChildScrollView(
@@ -22,17 +30,17 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                 Padding(
                   padding: AppConstants.regularPadding,
                   child: Column(children: [
-                    TopBar(),
-                    DoctorInfo(),
+                    const TopBar(),
+                    DoctorInfo(doctor: widget.doctor, index: widget.index)
                   ]),
                 ),
-                ScheduleDay(),
+                const ScheduleDay(),
                 Padding(
                   padding: AppConstants.regularPadding,
                   child: Column(
                     children: [
-                      ScheduleTime(),
-                      Complaint(),
+                      const ScheduleTime(),
+                      Complaint(doctor: widget.doctor, index: widget.index),
                     ],
                   ),
                 ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/src/models/services.dart';
+import 'package:medical_app/src/models/models.dart';
 import 'package:medical_app/src/screens/home/widgets/service.dart';
-import 'package:medical_app/src/utils/app_colors.dart';
+import 'package:medical_app/src/screens/home/widgets/text_button.dart';
+import 'package:medical_app/src/utils/utils.dart';
 
 class Services extends StatelessWidget {
   const Services({super.key});
@@ -13,16 +14,8 @@ class Services extends StatelessWidget {
         const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Our Services',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: AppColors.purple,
-                )),
-            Text('See More',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: AppColors.orange,
-                ))
+            Text('Our Services', style: TextStyles.title),
+            OrangeTextButton(text: 'See More')
           ],
         ),
         const SizedBox(

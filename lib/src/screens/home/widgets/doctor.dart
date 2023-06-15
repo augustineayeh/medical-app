@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/src/models/doctor.dart';
+import 'package:medical_app/src/models/models.dart';
 import 'package:medical_app/src/screens/appointment/appointment_screen.dart';
-import 'package:medical_app/src/utils/app_colors.dart';
+import 'package:medical_app/src/utils/utils.dart';
 
 class DoctorWidget extends StatelessWidget {
   final Doctor doctor;
@@ -19,7 +19,9 @@ class DoctorWidget extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const AppointmentScreen()),
+          MaterialPageRoute(
+              builder: (context) =>
+                  AppointmentScreen(doctor: doctor, index: index)),
         );
       },
       child: Container(
@@ -35,7 +37,7 @@ class DoctorWidget extends StatelessWidget {
               CircleAvatar(
                 radius: 30,
                 backgroundImage: AssetImage(
-                  doctor.aviUrl,
+                  doctor.imageUrl,
                 ),
               ),
               const SizedBox(width: 10),
@@ -43,7 +45,7 @@ class DoctorWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    doctor.doctorName,
+                    doctor.name,
                     style: const TextStyle(
                         color: AppColors.purple,
                         fontSize: 18,

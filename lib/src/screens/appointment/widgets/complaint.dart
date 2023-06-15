@@ -1,9 +1,17 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:medical_app/src/screens/chat/chat.dart';
-import 'package:medical_app/src/utils/app_colors.dart';
+import 'package:medical_app/src/models/models.dart';
+import 'package:medical_app/src/screens/chat/chat_sreen.dart';
+import 'package:medical_app/src/utils/utils.dart';
 
 class Complaint extends StatelessWidget {
-  const Complaint({super.key});
+  final Doctor doctor;
+  final int index;
+  const Complaint({
+    Key? key,
+    required this.doctor,
+    required this.index,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,17 +34,17 @@ class Complaint extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(
-          height: 20,
-        ),
         InkWell(
           onTap: (() {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Chat()),
+              MaterialPageRoute(
+                  builder: (context) =>
+                      ChatScreen(doctor: doctor, index: index)),
             );
           }),
           child: Container(
+              margin: const EdgeInsets.only(top: 20),
               width: 400,
               padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(

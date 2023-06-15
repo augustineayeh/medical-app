@@ -1,8 +1,15 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:medical_app/src/models/models.dart';
 
 class DoctorInfo extends StatelessWidget {
-  const DoctorInfo({super.key});
-
+  const DoctorInfo({
+    Key? key,
+    required this.doctor,
+    required this.index,
+  }) : super(key: key);
+  final Doctor doctor;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,9 +25,9 @@ class DoctorInfo extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Dr. Martin Zamkin',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+                    Text(
+                      doctor.name,
+                      style: const TextStyle(color: Colors.white, fontSize: 22),
                     ),
                     const SizedBox(
                       height: 5,

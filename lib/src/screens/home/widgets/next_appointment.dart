@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/src/models/doctor.dart';
+import 'package:medical_app/src/models/models.dart';
 import 'package:medical_app/src/screens/home/widgets/doctor.dart';
-import 'package:medical_app/src/utils/app_colors.dart';
-import 'package:medical_app/src/utils/text_styles.dart';
+import 'package:medical_app/src/screens/home/widgets/text_button.dart';
+import 'package:medical_app/src/utils/utils.dart';
 
 class NextAppointment extends StatelessWidget {
   const NextAppointment({super.key});
@@ -13,16 +13,12 @@ class NextAppointment extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: AppConstants.regularPadding,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Next Appointment', style: TextStyles.title),
-              Text('View All',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: AppColors.orange,
-                  ))
+              OrangeTextButton(text: 'View All')
             ],
           ),
         ),

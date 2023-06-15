@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/src/utils/app_constants.dart';
+import 'package:medical_app/src/utils/utils.dart';
 
 import 'widgets/widgets.dart';
 
@@ -22,10 +22,40 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: const SafeArea(
+        bottom: false,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: AppConstants.regularPadding,
+                child: Column(
+                  children: [
+                    WelcomeSection(),
+                    TopStackWidget(),
+                    SizedBox(height: 15),
+                    SearchField(),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Services(),
+                    SizedBox(
+                      height: 25,
+                    ),
+                  ],
+                ),
+              ),
+              NextAppointment(),
+            ],
+          ),
+        ),
+      ),
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 8.0),
+        padding: const EdgeInsets.only(
+          bottom: 8.0,
+        ),
         child: SizedBox(
           height: 60,
           width: 60,
@@ -63,40 +93,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-          ),
-        ),
-      ),
-      body: const SafeArea(
-        bottom: false,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Padding(
-                padding: AppConstants.regularPadding,
-                child: Column(
-                  children: [
-                    WelcomeSection(),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: 15,
-                        bottom: 23,
-                      ),
-                      child: TopStackWidget(),
-                    ),
-                    SizedBox(height: 15),
-                    SearchField(),
-                    SizedBox(
-                      height: 25,
-                    ),
-                    Services(),
-                    SizedBox(
-                      height: 25,
-                    ),
-                  ],
-                ),
-              ),
-              NextAppointment(),
-            ],
           ),
         ),
       ),

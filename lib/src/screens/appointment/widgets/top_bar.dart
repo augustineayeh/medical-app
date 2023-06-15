@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/src/screens/appointment/widgets/notif_button.dart';
-import 'package:medical_app/src/utils/text_styles.dart';
+import 'package:medical_app/src/screens/appointment/widgets/widgets.dart';
+import 'package:medical_app/src/utils/utils.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({super.key});
